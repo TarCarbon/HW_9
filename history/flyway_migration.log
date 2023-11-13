@@ -1,0 +1,8 @@
+2023-11-13 12:08:15 ERROR FlywayMigration:15 - Migration fatal: org.flywaydb.core.internal.exception.FlywaySqlException: Unable to obtain connection from database (jdbc:h2:~/db/db) for user 'user': Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-210]
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 90020
+Error Code : 90020
+Message    : Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-210]
+
+  2023-11-13 12:08:50 INFO  FlywayMigration:13 - migration is successful
+  
