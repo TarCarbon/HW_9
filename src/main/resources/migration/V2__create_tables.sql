@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS builders (id INT AUTO_INCREMENT PRIMARY KEY, address 
 
 CREATE TABLE IF NOT EXISTS apartments (id INT AUTO_INCREMENT PRIMARY KEY, number SMALLINT, area SMALLINT);
 
-CREATE TABLE IF NOT EXISTS builders_to_apartments (id INT AUTO_INCREMENT PRIMARY KEY, building_id INT, apartment_id INT,
+CREATE TABLE IF NOT EXISTS builders_to_apartments (building_id INT, apartment_id INT,
                                                    FOREIGN KEY (building_id) REFERENCES builders(id),
     FOREIGN KEY (apartment_id) REFERENCES apartments(id));
 
