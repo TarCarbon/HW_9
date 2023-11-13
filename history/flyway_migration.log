@@ -5,4 +5,25 @@ Error Code : 90020
 Message    : Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-210]
 
   2023-11-13 12:08:50 INFO  FlywayMigration:13 - migration is successful
+  2023-11-13 12:10:14 ERROR FlywayMigration:15 - Migration fatal: org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: Migration V4__add_index.sql failed
+----------------------------------
+SQL State  : 42001
+Error Code : 42001
+Message    : Syntax error in SQL statement "ALTER TABLE property_rights_to_residents ADD INDEX [*](property_right_id)"; expected "IDENTITY, BIGSERIAL, SERIAL, data type"; SQL statement:
+ALTER TABLE property_rights_to_residents ADD INDEX (property_right_id) [42001-210]
+Location   : db/migration/V4__add_index.sql (/home/greenfey/Programs/Project/HW_9/build/resources/main/db/migration/V4__add_index.sql)
+Line       : 1
+Statement  : ALTER TABLE property_rights_to_residents ADD INDEX (property_right_id)
+
+  2023-11-13 15:50:27 ERROR FlywayMigration:15 - Migration fatal: org.flywaydb.core.api.exception.FlywayValidateException: Validate failed: Migrations have failed validation
+Detected failed migration to version 4 (add index).
+Please remove any half-completed changes then run repair to fix the schema history.
+Need more flexibility with validation rules? Learn more: https://rd.gt/3AbJUZE
+  2023-11-13 16:00:47 ERROR FlywayMigration:15 - Migration fatal: org.flywaydb.core.api.exception.FlywayValidateException: Validate failed: Migrations have failed validation
+Migration checksum mismatch for migration version 1
+-> Applied to database : 945839653
+-> Resolved locally    : -1575848709
+Either revert the changes to the migration, or run repair to update the schema history.
+Need more flexibility with validation rules? Learn more: https://rd.gt/3AbJUZE
+  2023-11-13 16:03:39 INFO  FlywayMigration:18 - migration is successful
   
