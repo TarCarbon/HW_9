@@ -18,7 +18,7 @@ dependencies {
     implementation 'com.h2database:h2:2.1.210'
     compileOnly 'org.projectlombok:lombok:1.18.30'
     implementation 'org.flywaydb:flyway-core:10.0.0'
-
+    implementation 'log4j:log4j:1.2.17'
 }
 
 test {
