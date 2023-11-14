@@ -1,4 +1,4 @@
-package org.example.Entity;
+package org.example.entity;
 
 import lombok.Data;
 import lombok.Getter;
@@ -14,6 +14,8 @@ import java.util.Set;
 @Entity
 @Table (name = "residents")
 public class Resident {
+
+    @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -44,10 +46,20 @@ public class Resident {
     @ManyToOne (fetch = FetchType.LAZY)
     private ParticipantsOSBB participantOSBBid;
 
-    @ManyToMany
+    @Getter
+    @Setter
+    @ManyToMany (cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "residents_to_apartments",
     joinColumns = @JoinColumn(name = "residents_id"),
     inverseJoinColumns = @JoinColumn(name = "apartment_id"))
     private Set<Apartment> apartments = new HashSet<>();
+
+    @Getter
+    @Setter
+    @ManyToMany (cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable (name = "property_rights_to_residents",
+    joinColumns = @JoinColumn (name = "resident_id"),
+    inverseJoinColumns = @JoinColumn(name = "property_right_id"))
+    private Set<PropertyRights> propertyRights = new HashSet<>();
 
 }

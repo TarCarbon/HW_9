@@ -1,4 +1,4 @@
-package org.example.Entity;
+package org.example.entity;
 
 import lombok.Data;
 import lombok.Getter;
@@ -7,7 +7,9 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @RequiredArgsConstructor
@@ -25,4 +27,9 @@ public class ParticipantsOSBB {
 
     @OneToMany (mappedBy = "participant_OSBB_id", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Resident> residents = new ArrayList<>();
+
+    @Getter
+    @Setter
+    @ManyToMany(mappedBy = "participantsOSBB", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Apartment> apartments = new HashSet<>();
 }

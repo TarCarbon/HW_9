@@ -1,13 +1,11 @@
-package org.example.Entity;
+package org.example.entity;
 
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Data
@@ -25,7 +23,7 @@ public class Building {
     @Setter
     private String address;
 
-    @ManyToMany
+    @ManyToMany (cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable (name = "builders_to_apartments",
             joinColumns = @JoinColumn(name = "building_id"),
             inverseJoinColumns = @JoinColumn(name = "apartment_id"))
