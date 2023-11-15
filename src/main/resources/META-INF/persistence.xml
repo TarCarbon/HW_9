@@ -11,6 +11,7 @@
     <class>org.example.entity.Apartment</class>
     <class>org.example.entity.ParticipantsOSBB</class>
     <class>org.example.entity.PropertyRights</class>
+    <class>org.example.entity.ResidentsInfo</class>
 
     <properties>
         <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
